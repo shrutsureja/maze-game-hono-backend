@@ -11,7 +11,7 @@ app.use(logger());
 app.use(
   "/api/*",
   cors({
-    origin: ["https://maze-game-teal.vercel.app", "http://localhost:5173"],
+    origin: ["https://maze-game.shrutsureja.me"],
   })
 );
 
@@ -34,6 +34,11 @@ app.post("/api/generate", async (c) => {
     animation
   );
   return c.json({ success: true, data: MazeGrid });
+});
+
+// this is just for the health check
+app.get("/api", (c) => {
+  return c.json({ success: true, message: "Welcome to Maze API" });
 });
 
 export default app;
