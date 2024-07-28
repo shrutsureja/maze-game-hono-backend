@@ -11,7 +11,7 @@ app.use(logger());
 app.use(
   "/api/*",
   cors({
-    origin: ["https://*.shrutsureja.me"],
+    origin: ["https://*.shrutsureja.me", "https://maze.shrutsureja.me"],
   })
 );
 
